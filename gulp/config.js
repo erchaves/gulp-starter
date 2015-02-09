@@ -1,4 +1,4 @@
-var dest = "./build";
+var dest = "./test";
 var src = './src';
 
 module.exports = {
@@ -10,11 +10,11 @@ module.exports = {
   },
   sass: {
     src: src + "/sass/*.{sass,scss}",
-    dest: dest,
-    settings: {
-      indentedSyntax: true, // Enable .sass syntax!
-      imagePath: 'images' // Used by the image-url helper
-    }
+    dest: dest
+  },
+  less: {
+    src: src + "/less/*.less",
+    dest: dest
   },
   images: {
     src: src + "/images/**",
@@ -24,21 +24,7 @@ module.exports = {
     src: src + "/htdocs/**",
     dest: dest
   },
-  iconFonts: {
-    name: 'Gulp Starter Icons',
-    src: src + '/icons/*.svg',
-    dest: dest + '/fonts',
-    sassDest: src + '/sass',
-    template: './gulp/tasks/iconFont/template.sass.swig',
-    sassOutputName: '_icons.sass',
-    fontPath: 'fonts',
-    className: 'icon',
-    options: {
-      fontName: 'Post-Creator-Icons',
-      appendCodepoints: true,
-      normalize: false
-    }
-  },
+  iconFonts: {},
   browserify: {
     // A separate bundle will be generated for each
     // bundle config in the list below
